@@ -1,4 +1,6 @@
 
+
+
 #!/bin/bash
 
 # Run Ollama container with GPU support
