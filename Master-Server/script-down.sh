@@ -27,7 +27,7 @@ check_gpu_difference() {
             utilization_diff=$((last_utilization - current_utilization))  # Calculate GPU utilization difference
         
             # Check if the utilization difference is less than 60%
-            if [ "${utilization_diff#-}" -lt 60 ]; then
+            if [ "${utilization_diff}" -lt 60 ]; then
                 ssh -t $MAIN_SERVER $CUSTOM_SCRIPT  # SSH into the worker node and run the scale-down script
             else
                 echo "$entry" >> "/root/project-2/db/temp_node.csv"  # Keep the node active by storing in temp file
