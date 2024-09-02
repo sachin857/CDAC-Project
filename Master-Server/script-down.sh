@@ -27,7 +27,7 @@ check_gpu_difference() {
             utilization_diff=$((last_utilization - current_utilization))  
         
             
-            if [ "${utilization_diff#-}" -lt 60 ]; then
+            if [ "${utilization_diff}" -lt 60 ]; then
                 ssh -t $MAIN_SERVER $CUSTOM_SCRIPT  
             else
                 echo "$entry" >> "/root/project-2/db/temp_node.csv"  
